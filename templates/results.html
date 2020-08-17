@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Review Page</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+
+      <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+
+</head>
+
+<body>
+
+  <div class="table-users">
+   <div class="header">Product list</div>
+
+   <table cellspacing="0">
+      <tr>
+         <th>Name</th>
+         <th>Price</th>
+      </tr>
+         {% for models in models %}
+      <tr>
+      <td>{{models['Name']}}</td>
+          <td>{{models['Price']}}</td>
+       {% endfor %}
+   </table>
+       <style>
+        form.ex1 {
+          text-align: center;
+          margin-top: 25px;
+          margin-bottom: 25px;
+        }
+        </style>
+        <form class="ex1" action="/" method="GET">
+            <input type="submit" value="Back">
+        </form>
+      <!--<form style="text-align: center" action="/" method="GET">-->
+</div>
+
+
+
+</body>
+
+</html>
